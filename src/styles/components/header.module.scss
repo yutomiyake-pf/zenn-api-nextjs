@@ -1,4 +1,4 @@
-@use "../vars/width.scss" as widthVars;
+@use "../libs/vars/width.scss" as widthVars;
 
 $btnColor: #3ea8ff;
 $btnHoverColor: #0f83fd;
@@ -27,6 +27,7 @@ $btnHoverColor: #0f83fd;
   }
 
   &__link {
+    font-size: 15px;
     background-color: $btnColor;
     color: rgb(255, 255, 255);
     font-weight: bold;

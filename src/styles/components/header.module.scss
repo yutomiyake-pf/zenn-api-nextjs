@@ -1,0 +1,41 @@
+@use "../vars/width.scss" as widthVars;
+
+$btnColor: #3ea8ff;
+$btnHoverColor: #0f83fd;
+
+.header {
+  width: 100vw;
+  padding: 0 20px;
+
+  &__content {
+    max-width: widthVars.$contentMaxWidth;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    padding: 10px 0;
+  }
+
+  &__icon {
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+
+  &__link {
+    background-color: $btnColor;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1;
+    padding: 15px;
+    border-radius: 7px;
+    transition: background-color 0.4s ease;
+    &:hover {
+      background-color: #0f83fd;
+    }
+  }
+}

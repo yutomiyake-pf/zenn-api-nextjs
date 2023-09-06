@@ -12,6 +12,10 @@ $activeLinkColor: #000000d1;
     margin: 0 auto;
     display: flex;
     gap: 1.4rem;
+
+    @include mediaMixin.media("sp") {
+      gap: 1rem;
+    }
   }
 
   &__link {
@@ -29,6 +33,10 @@ $activeLinkColor: #000000d1;
     &--active {
       color: $activeLinkColor;
       border-bottom: 2px solid $activeLinkColor;
+    }
+
+    @include mediaMixin.media("sp") {
+      font-size: 14px;
     }
   }
 }

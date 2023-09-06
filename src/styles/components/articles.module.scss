@@ -1,0 +1,12 @@
+@use "../libs/vars/width.scss" as widthVars;
+
+@use "../libs/mixins/mediaMixin.scss" as mediaMixin;
+
+.articles {
+  padding: 3rem 20px 0 20px;
+  background-color: #f1f5f9;
+  &__content {
+    max-width: widthVars.$contentMaxWidth;
+    margin: 0 auto;
+  }
+}

@@ -15,7 +15,7 @@ interface Props {
 const IndexPage: FC<Props> = ({ zennUser, zennPosts }) => {
   const links = [
     {
-      text: `HOME`,
+      text: "Home",
       href: "/",
       isBlank: false,
       isActive: true,

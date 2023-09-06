@@ -1,0 +1,60 @@
+@use "../libs/vars/width.scss" as widthVars;
+
+@use "../libs/mixins/mediaMixin.scss" as mediaMixin;
+
+.introduction {
+  padding: 3rem 20px 0 20px;
+
+  &__content {
+    max-width: widthVars.$contentMaxWidth;
+    margin: 0 auto;
+  }
+
+  &__mainContent {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include mediaMixin.media("sp") {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    @include mediaMixin.media("sp") {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__nameWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @include mediaMixin.media("sp") {
+      gap: 20px;
+    }
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    font-weight: bold;
+    color: #000000d1;
+  }
+
+  &__likedCountWrap {
+    color: #65717b;
+    line-height: 1;
+  }
+
+  &__likedCount {
+    color: #000000d1;
+    font-weight: bold;
+  }
+}

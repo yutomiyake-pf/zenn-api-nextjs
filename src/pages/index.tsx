@@ -1,4 +1,6 @@
 import Header from "@/components/Header";
+import Introduction from "@/components/Introduction";
+import MenuLinks from "@/components/MenuLinks";
 import { ZENN_POST_TYPE, ZENN_USER_TYPE } from "@/types/zennTypes";
 import { ZENN_FETCH_POST_URL, ZENN_ORIGIN, ZENN_USER_URL } from "@/vars/zenn";
 import { GetStaticProps } from "next";
@@ -6,13 +8,36 @@ import { FC } from "react";
 
 interface Props {
   zennUser: ZENN_USER_TYPE;
+  zennPosts: ZENN_POST_TYPE[];
 }
 
-const IndexPage: FC<Props> = ({ zennUser }) => {
-  console.log(zennUser);
+const IndexPage: FC<Props> = ({ zennUser, zennPosts }) => {
+  const links = [
+    {
+      text: `Articles ${zennPosts.length}`,
+      href: "/articles",
+      isBlank: false,
+      isActive: false,
+    },
+    {
+      text: "Scraps",
+      href: `${ZENN_USER_URL}?tab=scraps`,
+      isBlank: true,
+      isActive: false,
+    },
+    {
+      text: "Comments",
+      href: `${ZENN_USER_URL}?tab=comments`,
+      isBlank: true,
+      isActive: false,
+    },
+  ];
+
   return (
     <>
       <Header zennIconUrl={zennUser.iconUrl} zennUrl={ZENN_USER_URL} />
+      <Introduction zennUser={zennUser} />
+      <MenuLinks articleCount={zennUser.totalLikedCount} links={links} />
     </>
   );
 };
@@ -28,6 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
       const data = await res.json();
       let totalLikedCount = 0; // いいね数
       data.articles.forEach((article: any) => {
+        totalLikedCount += article.liked_count;
         posts.push({
           id: article.id as string,
           title: article.title as string,
@@ -54,6 +80,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       zennUser: user as ZENN_USER_TYPE,
+      zennPosts: posts,
     },
     revalidate: 1,
   };

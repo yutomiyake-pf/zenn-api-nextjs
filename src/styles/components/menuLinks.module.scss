@@ -1,0 +1,28 @@
+@use "../libs/vars/width.scss" as widthVars;
+
+@use "../libs/mixins/mediaMixin.scss" as mediaMixin;
+
+.menuLinks {
+  padding: 3.2rem 20px 0 20px;
+
+  &__content {
+    max-width: widthVars.$contentMaxWidth;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.4rem;
+  }
+
+  &__link {
+    padding: 7px 0;
+    font-size: 17px;
+    color: #8f9faa;
+    font-weight: bold;
+    line-height: 1;
+    transition: all 0.4s ease;
+
+    &--active {
+      color: #000000d1;
+      border-bottom: 2px solid #000000d1;
+    }
+  }
+}

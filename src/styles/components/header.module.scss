@@ -10,7 +10,7 @@ $btnHoverColor: #0f83fd;
   padding: 0 20px;
 
   &__content {
-    max-width: widthVars.$contentMaxWidth;
+    max-width: widthVars.$siteMaxWidth;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

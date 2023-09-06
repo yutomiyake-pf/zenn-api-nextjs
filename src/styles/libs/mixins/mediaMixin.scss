@@ -1,0 +1,13 @@
+@use "../vars/width.scss" as widthVars;
+
+@mixin media($breakpoint) {
+  @if $breakpoint == "tablet" {
+    @media (max-width: widthVars.$tabletBreakPoint) {
+      @content;
+    }
+  } @else if $breakpoint == "sp" {
+    @media (max-width: widthVars.$spBreakPoint) {
+      @content;
+    }
+  }
+}

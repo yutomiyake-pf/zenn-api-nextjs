@@ -1,5 +1,7 @@
 @use "../libs/vars/width.scss" as widthVars;
 
+@use "../libs/mixins/mediaMixin.scss" as mediaMixin;
+
 $btnColor: #3ea8ff;
 $btnHoverColor: #0f83fd;
 
@@ -24,6 +26,10 @@ $btnHoverColor: #0f83fd;
     height: 70px;
     width: 70px;
     border-radius: 50%;
+    @include mediaMixin.media("sp") {
+      height: 50px;
+      width: 50px;
+    }
   }
 
   &__link {
@@ -32,11 +38,15 @@ $btnHoverColor: #0f83fd;
     color: rgb(255, 255, 255);
     font-weight: bold;
     line-height: 1;
-    padding: 15px;
+    padding: 13px;
     border-radius: 7px;
     transition: background-color 0.4s ease;
     &:hover {
       background-color: #0f83fd;
+    }
+
+    @include mediaMixin.media("sp") {
+      font-size: 13px;
     }
   }
 }

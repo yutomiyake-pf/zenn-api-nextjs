@@ -20,7 +20,7 @@ const Header: FC<Props> = ({ zennIconUrl, zennUrl }) => {
             alt="ゆーとおじさん"
             width={70}
             height={70}
-            quality={50}
+            quality={80}
             loading="lazy"
           />
         </h1>

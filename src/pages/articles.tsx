@@ -1,3 +1,4 @@
+import Articles from "@/components/Articles";
 import Header from "@/components/Header";
 import Introduction from "@/components/Introduction";
 import MenuLinks from "@/components/MenuLinks";
@@ -12,19 +13,19 @@ interface Props {
   zennPosts: ZENN_POST_TYPE[];
 }
 
-const IndexPage: FC<Props> = ({ zennUser, zennPosts }) => {
+const articlesPage: FC<Props> = ({ zennUser, zennPosts }) => {
   const links = [
     {
-      text: `HOME`,
+      text: "HOME",
       href: "/",
       isBlank: false,
-      isActive: true,
+      isActive: false,
     },
     {
       text: `Articles ${zennPosts.length}`,
       href: "/articles",
       isBlank: false,
-      isActive: false,
+      isActive: true,
     },
     {
       text: "Scraps",
@@ -39,12 +40,12 @@ const IndexPage: FC<Props> = ({ zennUser, zennPosts }) => {
       isActive: false,
     },
   ];
-
   return (
     <>
       <Header zennIconUrl={zennUser.iconUrl} zennUrl={ZENN_USER_URL} />
       <Introduction zennUser={zennUser} />
       <MenuLinks articleCount={zennUser.totalLikedCount} links={links} />
+      <Articles zennPosts={zennPosts} />
     </>
   );
 };
@@ -65,4 +66,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default IndexPage;
+export default articlesPage;

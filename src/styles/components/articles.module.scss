@@ -8,5 +8,55 @@
   &__content {
     max-width: widthVars.$contentMaxWidth;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__article {
+    width: 30%;
+    background-color: #ffffff;
+  }
+
+  &__articleLinkWrap {
+    display: block;
+  }
+
+  &__emojiWrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cfe5fe;
+    padding: 25px 0;
+    font-size: 46px;
+    line-height: 1.5;
+  }
+
+  &__articleType {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #ffffff;
+    background-color: #3ea8ff;
+    border-radius: 33%;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: bold;
+    padding: 3px 6px;
+  }
+
+  &__titleWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px 7px 0 7px;
+    color: #4b4f52d1;
+  }
+
+  &__title {
+    font-size: 16px;
   }
 }

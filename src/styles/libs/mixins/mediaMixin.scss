@@ -9,5 +9,11 @@
     @media (max-width: widthVars.$spBreakPoint) {
       @content;
     }
+  } @else if $breakpoint == "miniSp" {
+    @media (max-width: widthVars.$miniSpBreakPoint) {
+      @content;
+    }
+  } @else {
+    @content;
   }
 }
